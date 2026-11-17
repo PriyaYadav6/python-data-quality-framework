@@ -1,0 +1,24 @@
+dataset: orders
+
+required_columns:
+  - order_id
+  - customer_id
+  - amount
+  - country
+
+checks:
+  not_null:
+    - customer_id
+
+  unique:
+    - order_id
+
+  positive:
+    - amount
+
+  allowed_values:
+    country:
+      - IN
+      - DE
+      - US
+      - NL
